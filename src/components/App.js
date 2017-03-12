@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 // my components
 import Header from './Header';
