@@ -2,15 +2,21 @@ import React, { Component } from 'react';
 
 
 class Counter extends Component{
-	propTypes: {
-		score: React.PropTypes.number.isRequired,
-	}
+	constructor(props) {
+	    super(props);
+	    this.state = {
+	    	score: 0,
+	    };
+  	}
+
+	propTypes: {}
+	
 
 	render () {
 		return (
 			<div className="counter">
 	          <button className="counter-action decrement">-</button>
-	          <div className="counter-score">{this.props.score}</div>
+	          <div className="counter-score">{this.state.score}</div>
 	          <button className="counter-action decrement">-</button>
 	        </div>
 		);
