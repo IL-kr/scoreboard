@@ -5,4 +5,4 @@ import './index.css';
 
 import PLAYERS from './helpers';
 
-render(<App players={PLAYERS}/>, document.getElementById('root'));
+render(<App initialPlayers={PLAYERS}/>, document.getElementById('root'));
