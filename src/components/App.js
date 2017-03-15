@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 
-const nextId = 5;
-
 // my components
 import Header from './Header';
 import Player from './Player';
 import AddPlayerForm from './AddPlayerForm';
 
+import {nextID} from './../helpers'
 
 import './../css/App.css';
 
@@ -25,10 +24,10 @@ class App extends Component{
     this.state.players.push({
       name: name,
       score: 0,
-      id: nextId,
+      id: nextID.id,
     });
     this.setState(this.state);
-    nextId += 1;
+    nextID.id += 1;
   }
   onRemovePlayer = (index) => {
     this.state.players.splice(index,1);

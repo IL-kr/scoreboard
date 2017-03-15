@@ -22,6 +22,10 @@ const PLAYERS = [
 
 ];
 
+var nextID = {
+	id: 5
+}
+
 export {
-	PLAYERS,
+	PLAYERS, nextID,
 }
