@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 
+const nextId = 5;
+
 // my components
 import Header from './Header';
 import Player from './Player';
+import AddPlayerForm from './AddPlayerForm';
+
 
 import './../css/App.css';
 
@@ -14,26 +18,39 @@ class App extends Component{
     };
   }
   onScoreChange = (index, delta) => {
-    console.log("onScoreChange", index, delta);
     this.state.players[index].score += delta;
     this.setState(this.state);
   }
-
+  onPlayerAdd = (name) => {
+    this.state.players.push({
+      name: name,
+      score: 0,
+      id: nextId,
+    });
+    this.setState(this.state);
+    nextId += 1;
+  }
+  onRemovePlayer = (index) => {
+    this.state.players.splice(index,1);
+    this.setState(this.state);
+  }
   render () {
     return (
       <div className="scoreboard">
-        <Header title={this.props.title} />
+        <Header title={this.props.title} players={this.state.players}/>
 
         <div className="players">
           {this.state.players.map((player, index) => (
             <Player 
               onScoreChange={delta => this.onScoreChange(index, delta)}
+              onRemove={() => {this.onRemovePlayer(index)}}
               name={player.name} 
               score={player.score} 
               key={player.id}/>
             )
           )}
         </div>
+        <AddPlayerForm onAdd={this.onPlayerAdd}/>
       </div>
     );
   }
