@@ -1,5 +1,25 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    color: #222;
+}
+
+footer i { color: red; }
+
+footer a{
+	color: #222;
+	text-decoration: none;
+}
+
+footer img { width: 150px; }
+
+.footer__ad span { display: block; }
+
+.footer__ad { width: 200px; }
